@@ -49,10 +49,10 @@ const Footer = () => {
         <div className="col-2 d-flex flex-column justify-content-start ">
           <h6 className="pb-1">Follow Us</h6>
           <div className="d-flex  justify-content-start gap-3">
-            <i class="bi bi-facebook fs-5 "></i>
-            <i class="bi bi-youtube fs-5"></i>
-            <i class="bi bi-twitter fs-5"></i>
-            <i class="bi bi-linkedin fs-5"></i>
+            <i className="bi bi-facebook fs-5 "></i>
+            <i className="bi bi-youtube fs-5"></i>
+            <i className="bi bi-twitter fs-5"></i>
+            <i className="bi bi-linkedin fs-5"></i>
           </div>
         </div>
       </div>

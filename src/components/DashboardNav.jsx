@@ -5,12 +5,12 @@ import { IoMdMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
 const DashboardNav = () => {
   return (
-    <div className="w-100 d-flex justify-content-between align-items-center py-3 px-5">
+    <div className="w-100 d-flex justify-content-between align-items-center py-4 px-5">
       <div className="d-flex justify-content-between align-items-center gap-3">
         <IoMdMenu size={24} />
-        <h5 className="fs-4">
-          # <Link to="/">Taskly</Link>
-        </h5>
+        <Link className="navbar-brand " to="/">
+          <span className="border border-dark rounded-1  px-2 ">#</span> TASKLY
+        </Link>
       </div>
 
       <div className="d-flex justify-content-between align-items-center gap-4">

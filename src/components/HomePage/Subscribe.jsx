@@ -6,14 +6,14 @@ const Subscribe = () => {
       <div className="p-5">
         <div className="d-flex flex-column justify-content-center align-items-center ">
           <h1 className="features-heading text-center">Let's keep in touch</h1>
-          <p className="fs-5 fw-medium text-secondary text-center  w-50 pb-5">
+          <p className="fs-5  text-secondary text-center  w-50 pb-4">
             Subscirbe to keep up with fresh news and exciting updates. We
             promise not to spam you!
           </p>
         </div>
 
-        <div class="d-flex justify-content-center align-items-center pb-5">
-          <form class="d-flex justify-content-center align-items-center w-50  gap-3">
+        <div className="d-flex justify-content-center align-items-center pb-5">
+          <form className="d-flex justify-content-center align-items-center w-50  gap-3">
             <input
               className="col-8 py-2 px-3"
               type="search"

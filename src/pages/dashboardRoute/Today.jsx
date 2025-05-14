@@ -4,18 +4,46 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { CiCalendar, CiStar } from "react-icons/ci";
 import { RiCheckboxBlankLine, RiCheckboxFill } from "react-icons/ri";
 import { GoStar, GoStarFill } from "react-icons/go";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Task from "../../components/Dashboard/Task";
+import { addTask } from "../../redux/features/tasksSlice";
 
 const Today = () => {
+  const { tasks } = useSelector((state) => state.tasks);
+  const dispatch = useDispatch();
+  const [taskText, setTaskText] = useState("");
+  const handleForSubmit = (e) => {
+    e.preventDefault();
+
+    const tasks1 = {
+      id: 3,
+      title: "Buy Cold Drinks",
+      status: "complete",
+      important: false,
+    };
+    dispatch(addTask(tasks1));
+  };
+
   return (
     <div>
-      <div className="d-flex justify-content-start align-items-center gap-1 border-bottom  border-success-subtle">
-        <p className="mb-0">To Do</p>
+      {/* <div className="d-flex justify-content-start align-items-center gap-1 border-bottom  border-success-subtle ">
+        <p className="mb-0 mt-0 ">To Do</p>
         <TiArrowSortedDown size={16} />
-      </div>
+      </div> */}
       {/* task container */}
-      <div className="addTask p-3 d-flex flex-column">
+      <form
+        onSubmit={handleForSubmit}
+        className="addTask px-3 p-3 d-flex flex-column"
+      >
         <div className="flex-grow-1">
-          <p>Add A Task</p>
+          <textarea
+            type="text"
+            value={taskText}
+            onChange={(e) => setTaskText(e.target.value)}
+            className="border-0 bg-transparent  w-100 focus-ring-light text-secondary custom-textarea"
+            placeholder="Add a task..."
+          />
         </div>
         {/* task input */}
         <div className="d-flex justify-content-between">
@@ -25,43 +53,20 @@ const Today = () => {
             <CiCalendar size={20} />
           </div>
           <div>
-            <button className="btn btn-sm bg-success text-white fw-medium">
+            <button
+              type="submit"
+              className="btn btn-sm bg-success text-white fw-medium"
+            >
               ADD TASK
             </button>
           </div>
         </div>
         {/* tasks */}
-      </div>
+      </form>
       {/* single task */}
-      <div className="d-flex justify-content-between align-items-center border-bottom py-3 px-3">
-        <div className="d-flex justify-content-between align-items-center gap-2 ">
-          <RiCheckboxBlankLine size={22} />
-          <h6 className="mb-0 fw-normal">Buy groceries</h6>
-        </div>
-        <div>
-          <CiStar size={22} />
-        </div>
-      </div>
-      {/* single task */}
-      <div className="d-flex justify-content-between align-items-center border-bottom py-3 px-3">
-        <div className="d-flex justify-content-between align-items-center gap-2 ">
-          <RiCheckboxBlankLine size={22} />
-          <h6 className="mb-0 fw-normal">Buy groceries</h6>
-        </div>
-        <div>
-          <CiStar size={24} />
-        </div>
-      </div>
-      {/* single task */}
-      <div className="d-flex justify-content-between align-items-center border-bottom py-3 px-3">
-        <div className="d-flex justify-content-between align-items-center gap-2 ">
-          <RiCheckboxBlankLine size={22} />
-          <h6 className="mb-0 fw-normal">Buy groceries</h6>
-        </div>
-        <div>
-          <CiStar size={24} />
-        </div>
-      </div>
+      {tasks?.map((task) => (
+        <Task key={task.id} task={task} />
+      ))}
 
       {/* complete container <RiCheckboxFill />*/}
       <div className="pt-4">

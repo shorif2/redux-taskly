@@ -7,7 +7,7 @@ import { FaRegCircle } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
-    <div className=" sidebar  p-4 ms-5">
+    <div className=" sidebar  p-4 ">
       {/* profile */}
       <div className="d-flex flex-column justify-content-center align-items-center">
         <div className="rounded-circle">
