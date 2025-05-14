@@ -1,25 +1,108 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="d-flex  justify-content-between align-items-center p-3 container">
-      <div className="fs-4 fw-semibold">TASKLY</div>
-      <div className="d-flex flex-row justify-content-between gap-4 fw-medium">
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/contact"}>Contact</NavLink>
-        <NavLink to={"/about"}>About</NavLink>
-        <NavLink to={"/dashboard"}>Dashboard</NavLink>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light pt-3">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          <span className="border border-dark rounded-1  px-2">#</span> TASKLY
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div
+          className="collapse navbar-collapse fw-medium"
+          id="navbarSupportedContent"
+        >
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/dashboard"
+              >
+                Dashboard
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/contact"
+              >
+                Contact
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/contact"
+              >
+                About
+              </Link>
+            </li>
+
+            {/* dropdown */}
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Action
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Another action
+                  </a>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Something else here
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div className="d-flex gap-3 ">
+            <Link
+              to="/login"
+              className="btn btn-sm btn-outline-secondary fs-6 fw-medium px-3"
+            >
+              Login
+            </Link>
+            <Link
+              to="/login"
+              className="btn btn-sm btn-secondary fs-6 fw-medium px-3"
+            >
+              Sign-up
+            </Link>
+          </div>
+        </div>
       </div>
-      <div className="d-flex justify-content-between gap-2 fw-medium">
-        <NavLink to={"/login"} className="btn btn-primary fw-medium">
-          Log in
-        </NavLink>
-        <NavLink to={"/signup"} className="btn btn-danger fw-medium">
-          Signup
-        </NavLink>
-      </div>
-    </div>
+    </nav>
   );
 };
 

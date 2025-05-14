@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .w-40 {
   width: 40%;
 }
@@ -51,6 +52,9 @@ p {
 }
 .h-custom {
   height: calc(100% - 73px);
+}
+.categories-logo {
+  height: fit-content !important;
 }
 @media (max-width: 450px) {
   .h-custom {

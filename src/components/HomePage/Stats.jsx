@@ -5,7 +5,7 @@ const Stats = () => {
     <div className="bg-light ">
       <div className="container d-flex flex-column justify-items-center align-items-center py-5">
         <h1 className="features-heading text-center">Why Taskly</h1>
-        <p className="fs-5 fw-medium text-secondary text-center  w-50 ">
+        <p className="fs-5 fw-medium text-secondary text-center  w-50 pb-3">
           Taskly increases employee productivity and customer satisfaction,
           according to IDC
         </p>
