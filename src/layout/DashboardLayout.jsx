@@ -2,12 +2,14 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Dashboard/Sidebar";
 import DashboardNav from "../components/DashboardNav";
 import TaskModal from "../components/Dashboard/TaskModal";
-import { useState } from "react";
+
 import { useSelector } from "react-redux";
 
 const DashboardLayout = () => {
-  const { isModalShow, isSidebarShow } = useSelector((state) => state.filter);
-  const [isShow, setIsShow] = useState(false);
+  const { isModalShow, isSidebarShow, manageTask } = useSelector(
+    (state) => state.filter
+  );
+
   return (
     <div className="vh-100 d-flex flex-column">
       <DashboardNav />
@@ -16,7 +18,7 @@ const DashboardLayout = () => {
         <div className="flex-grow-1 ">
           <Outlet />
         </div>
-        {!isModalShow && <TaskModal />}
+        {isModalShow && <TaskModal task={manageTask} />}
       </div>
     </div>
   );
