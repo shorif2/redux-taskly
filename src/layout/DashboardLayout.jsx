@@ -13,7 +13,7 @@ const DashboardLayout = () => {
   return (
     <div className="vh-100 d-flex flex-column">
       <DashboardNav />
-      <div className="w-100  d-flex gap-5 flex-grow-1 px-5">
+      <div className="w-100  d-flex gap-4 flex-grow-1 px-5">
         {!isSidebarShow && <Sidebar />}
         <div className="flex-grow-1 ">
           <Outlet />

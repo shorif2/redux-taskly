@@ -8,6 +8,8 @@ import Register from "../pages/homeRoute/Register";
 import DashboardLayout from "../layout/DashboardLayout";
 import DahsHome from "../pages/dashboardRoute/DahsHome";
 import Today from "../pages/dashboardRoute/Today";
+import Important from "../pages/dashboardRoute/Important";
+import AllTasks from "../pages/dashboardRoute/AllTasks";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +46,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
+        element: <AllTasks />,
+      },
+      {
+        path: "/dashboard/today",
         element: <Today />,
+      },
+      {
+        path: "/dashboard/important",
+        element: <Important />,
       },
     ],
   },

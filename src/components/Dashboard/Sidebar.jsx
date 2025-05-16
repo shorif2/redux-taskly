@@ -4,6 +4,7 @@ import { AiOutlinePlus, AiOutlineContacts } from "react-icons/ai";
 import { CiCalendar, CiStar, CiPaperplane } from "react-icons/ci";
 import { GoDotFill } from "react-icons/go";
 import { FaRegCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -25,23 +26,34 @@ const Sidebar = () => {
       <div className="bg-white d-flex flex-column    py-4">
         <div className="d-flex align-items-center px-3 gap-3 py-2 menuHover">
           <GoChecklist size={24} />
-          <h6>All Tasks</h6>
+          <Link className="nav-link fw-medium" to="/dashboard">
+            All Tasks
+          </Link>
         </div>
         <div className="d-flex align-items-center px-3 gap-3 py-2 menuHover">
           <CiCalendar size={24} />
-          <h6>Today</h6>
+          <Link className="nav-link fw-medium" to="/dashboard/today">
+            Today
+          </Link>
         </div>
         <div className="d-flex align-items-center px-3 gap-3 py-2 menuHover">
           <CiStar size={26} />
-          <h6>Important</h6>
+          <Link className="nav-link fw-medium" to="/dashboard/important">
+            Important
+          </Link>
         </div>
         <div className="d-flex  align-items-center px-3 gap-3 py-2 menuHover">
           <CiPaperplane size={24} />
-          <h6>Planned</h6>
+          <Link className="nav-link fw-medium" to="/dashboard">
+            Planned
+          </Link>
         </div>
         <div className="d-flex  align-items-center px-3 gap-3 py-2 menuHover">
           <AiOutlineContacts size={24} />
-          <h6>Assigned to me</h6>
+
+          <Link className="nav-link fw-medium" to="/dashboard">
+            Assigned to me
+          </Link>
         </div>
       </div>
       {/* Add list container */}
